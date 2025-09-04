@@ -31,7 +31,7 @@ describe("POST /files", () => {
       .attach("file", validFilePath);
 
     expect(res.status).toBe(200);
-    expect(typeof res.body).toBe("string");          // now only the fileId
+    expect(typeof res.body).toBe("string");
     expect(res.body).toMatch(uuidv4rx);
 
   });

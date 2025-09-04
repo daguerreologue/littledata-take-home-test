@@ -8,7 +8,6 @@ const router = Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
 router.post("/", handleAsync(upload.single("file")), createFile);
-// router.post("/", handleAsync(createFile));
 router.get("/:file_id", handleAsync(getFileById));
 router.get("/", handleAsync(queryFiles));
 router.patch("/:file_id", handleAsync(updateTags));

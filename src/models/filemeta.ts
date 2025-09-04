@@ -1,9 +1,7 @@
 import { db } from "../db";
-import { logger } from "../infra/logger";
 import { Camelise, select } from "../utils/data-manipulation/struct-types";
 import { AppError } from "../utils/errors/common";
 import { StringRepr } from "../utils/types/doctypes";
-import mergePatch from "json-merge-patch";
 
 export type FileMetaRow = {
   file_id: StringRepr<"UUID v4">;
@@ -73,7 +71,6 @@ export const fileMeta = {
       limit $4`,
       { params: [userId, tag ?? null, cursor ?? null, limit] }
     );
-    // logger.log("DEBUG getRange", { cursor, limit, rows });
 
     return {
       items: rows,
