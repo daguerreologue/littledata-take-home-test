@@ -1,0 +1,1 @@
+export type Fn<Args extends any[], Ret> = (...args: Args) => Ret;

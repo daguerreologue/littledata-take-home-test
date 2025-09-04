@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: filemeta
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./src/migrations/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  api:
+    build: .
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: filemeta
+    depends_on:
+      - db
+
+volumes:
+  db_data:

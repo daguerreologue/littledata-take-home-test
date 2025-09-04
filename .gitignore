@@ -1,0 +1,41 @@
+# node deps
+node_modules/
+package-lock.json
+
+# TS output
+dist/
+*.tsbuildinfo
+
+logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# jest coverage
+coverage/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# docker
+*.env.docker
+docker-compose.override.yml
+db_data/
+
+# tmp files
+tmp/
+temp/

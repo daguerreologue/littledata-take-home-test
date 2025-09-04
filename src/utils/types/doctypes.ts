@@ -1,0 +1,2 @@
+/** String representing the out of band information of type A or its broad type-independent format description (e.g. StringRepr<"ISO 8601 timestamp">). For when you don't want to write template literal types (or not yet). */
+export type StringRepr<A> = string;
