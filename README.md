@@ -5,8 +5,6 @@ Users upload files to cloud storage; the service tracks **metadata** and provide
 
 Also note that other entities that would be logical to implement, such as users, etc. (and associated functionality such as access token authentication, etc.) are also omitted as they are not mentioned by the challange.
 
----
-
 ## Requirements
 - docker
 - docker-compose
@@ -16,11 +14,15 @@ Also note that other entities that would be logical to implement, such as users,
   ```bash
   docker-compose up --build
   ```
-  This starts localhost database (::5432) and server (::3000) instances.
+  This starts localhost database (on port 5432) and server (on port 3000) instances.
 
-  Alternatively (such as when running tests):
+  Alternatively, to start the database separately (such as when running tests):
   ```bash
-  npm run db:start && npm run start
+  npm run db:start
+  ```
+  And then the service can be started via:
+  ```bash
+  npm run start
   ```
 
 ## API Usage Examples
